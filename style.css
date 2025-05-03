@@ -1,0 +1,305 @@
+:root {
+    --daytime-toggler-color: #2196F3;
+    
+    --nighttime-toggler-color: #333;
+    --daytime-background-color: #fff;
+    --nighttime-background-color: #000;
+  
+    --color: #07daff;
+  
+    --daytime-icon-color: gold;
+    --nighttime-icon-color: #292929;
+    --toggler-icon-color: var(--daytime-icon-color);
+    --toggler-icon-left-padding: 0.38em;
+  }
+body {
+    font-family: "Montserrat", sans-serif !important; 
+    overflow-x: clip;
+}
+/*BG COLOR SECTIONS*/
+section:nth-of-type(odd) {
+    background-color: #f3f3f3;
+}
+/*SHOWCASE SECTION*/
+#showcase{
+    background-image: url(images/vini.jpeg);
+    background-size: cover;
+    background-position: center;
+    transition: .4s;
+}
+.nav-item a {
+    transition: .3s;
+}
+/*HOVER STATE*/
+.nav-item a:hover {
+    display: block;
+    color: var(--color);
+}
+
+/*COLOR VINICIUS COSTA TXT*/
+#buttonVini {
+    color: #07daff;
+}
+#tellMe {
+    background-color: #07daff;
+    border: none;
+    color: black;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-top: .7em;
+    padding-bottom: .7em;
+    font-size: 1.2em;
+}
+/*COLOR BUTTON NAVBAR*/
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+#colorHover {
+    color: white;
+    transition: .3s;
+}
+#colorHover:hover {
+    color: #07daff;
+}
+
+/*SIZE COURSE TITLE*/
+#showcase h2 {
+    font-size: 2em;
+}
+
+/*SKILLS ICONS*/
+.fa-circle {
+    color: var(--color);
+}
+
+/*LINE TIME LINE*/
+.timeline-img img {
+    padding: .5em !important;
+    background-color: white;
+    border: 2px solid rgb(151, 151, 151);
+    aspect-ratio: 1/1;
+}
+
+.timeline-img::before {
+    position: absolute;
+    content: ' ';
+    width: 2px;
+    background-color: rgb(151, 151, 151);
+    height: 100%;
+    left: 88%;
+    z-index: -1;
+}
+/*LITTLE ANIMATION PORTFOLIO*/
+#portfolio {
+    transition: .4s;
+}
+.portifolio-item {
+    transition: transform 0.3s;
+}
+.portifolio-item:hover {
+    transform: scale(1.05);
+}
+/*CV IMAGE*/
+#cv {
+    transition: .4s;
+}
+.image-cv img {
+    padding: .5em !important;
+    background-color: rgb(189, 189, 189);
+    aspect-ratio: 1/1;
+}
+/*STYLE LIST NONE*/
+.info > ul {
+    list-style: none;
+}
+.data > h3 {
+    border-bottom: 1px solid rgb(150, 150, 150);
+    padding-bottom: 0.5em;
+    text-align: start;
+}
+#contact {
+    background-image: url(images/contact-img.png);
+    background-size: cover;
+    background-position: center;
+}
+/*TOGGLER*/
+.toggler {
+    cursor: pointer;
+    background-color: var(--daytime-toggler-color);
+    transition: .4s;
+  }
+  .toggler:before {
+    box-sizing: border-box;
+    padding-left: var(--toggler-icon-left-padding);
+    padding-top: 0.45em;
+    position: absolute;
+    content: var(--fa);
+    color: var(--toggler-icon-color);
+    left: 50%;
+    height: 1.8em;
+    width: 1.8em;
+    bottom: 0.25em;
+    background-color: white;
+    transition: .4s;
+    top:.8em;
+  }
+  .toggler.round:before {
+    border-radius: 50%;
+  }
+  input#mode:checked ~ header > .navbar > .switch > .toggler {
+    --fa: '\f186'; /* change to the moon icon */
+    --toggler-icon-color: var(--nighttime-icon-color); /* change from yellow to the nighttime icon color */
+  }
+  
+  input#mode:checked ~ #showcase {
+    background-image: url(images/vini_night.png);
+  }
+
+  /*background portfolio color toggler*/
+  input#mode:checked ~ #portfolio {
+    background-color: #383838;
+  }
+  input#mode:checked ~ #portfolio > h2{
+    color: white;
+  }
+  input#mode:checked ~ #portfolio > h3{
+    color: white !important;
+  }
+
+  /*SKILLS ICONS BACKGROUNDS*/
+  input#mode:checked ~ #skills > div > div > div > span > i.fa-circle {
+    color: #000;
+  }
+
+  /*CV TOGGLER*/
+  input#mode:checked ~ #cv {
+    background-color: #383838;
+    color: white;
+  }
+  input#mode:checked ~ #cv > h3{
+    color: white !important;
+  }
+  /*STYLE ICON SOCIAL MEDIA*/
+  
+  input#mode:checked ~ #cv > div > div > div > ul > li > a > i{
+    color: white;
+  }
+
+  /*ANIMATIONSSSSS*/
+  @supports ((animation-range: 0% 100%)) {
+    @media (prefers-reduced-motion: no-preference) {
+        @keyframes moveStroke {
+            from {
+                stroke-dashoffset: 0;
+            }
+            to {
+                stroke-dashoffset: 10;
+            }
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }            
+        }
+        .fadeInDown {
+            animation-name: fadeInDown;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .fadeInUp {
+            animation-name: fadeInUp;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            }
+        .fadeInLeft {
+            animation-name: fadeInLeft;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .fadeInRight {
+            animation-name: fadeInRight;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .animateOnScrollInToView {
+            animation-timeline: view();
+            animation-range-start: 10%;
+            animation-range-end: 40%;
+        }
+        .animateOnScrollInToViewDelayed {
+            animation-timeline: view();
+            animation-range-start: 20%;
+            animation-range-end: 50%;
+        }
+        .animationDelay500 {
+            animation-delay: 0.5s;
+        }
+        .animationDelay1000 {
+            animation-delay: 1s;
+        }
+    }
+}
+
+
+
+
+
+
+@media (min-width: 768px) {
+    /*SIZE COURSE TITLE*/
+    #showcase h2 {
+        font-size: 4em;
+    }
+
+    /*ABOUT CONTAINER 100%*/
+    #aboutContainer {
+        width: 100%;
+    }
+
+    /*LINE TIMELINE*/
+    .timeline-img::before {
+        height: 100%;
+        left: 50%;
+    }
+
+    /*TOGGLER*/
+    .toggler:before {
+        left: 90%;
+    }
+}
