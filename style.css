@@ -166,6 +166,9 @@ section:nth-of-type(odd) {
   input#mode:checked ~ #portfolio > h3{
     color: white !important;
   }
+  input#mode:checked ~ #cv > h3{
+    color: white !important;
+  }
 
   /*SKILLS ICONS BACKGROUNDS*/
   input#mode:checked ~ #skills > div > div > div > span > i.fa-circle {
